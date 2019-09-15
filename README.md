@@ -35,7 +35,7 @@ number of slices and
 number of rows.`
 ```
 import org.thompson.StructTypeUtils._
-implicit val sparkContext  = sc
+implicit val sparkSession  = spark
 val employeeDF = structType.dataGenerator(genEmployee, 2, 200)
 ```
 View created data
