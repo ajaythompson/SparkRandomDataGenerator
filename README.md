@@ -1,15 +1,15 @@
-#SPARK DATA GENERATOR
+# SPARK DATA GENERATOR
 To generate random data with scala check generator with spark framework.
 Based on the Spark Struct Type data will be generated.
 
-##Building Spark data generator
+## Building Spark data generator
 Spark data generator is built using SBT. To build Spark and its example programs, run:
 
 ```
 sbt assembly
 ```
 
-##Using Spark Shell
+## Using Spark Shell
 Start spark with the data generator jar.
 ```
 .\spark-shell --jars SparkDataGenerator-assembly-0.1.jar
