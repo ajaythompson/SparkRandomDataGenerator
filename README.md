@@ -38,3 +38,32 @@ import org.thompson.StructTypeUtils._
 implicit val sparkContext  = sc
 val employeeDF = structType.dataGenerator(genEmployee, 2, 200)
 ```
+View created data
+```
+employeeDF.show
++----------+--------------------+
+|        id|                name|
++----------+--------------------+
+| 206368962|2!r0(JKpAQY4q6rGJ...|
+|1888401219|hTaTmur%WI@'cG_P(...|
+| 206368962|2!r0(JKpAQY4q6rGJ...|
+|1888401219|hTaTmur%WI@'cG_P(...|
+| 206368962|2!r0(JKpAQY4q6rGJ...|
+|1888401219|hTaTmur%WI@'cG_P(...|
+| 206368962|2!r0(JKpAQY4q6rGJ...|
+|1888401219|hTaTmur%WI@'cG_P(...|
+| 206368962|2!r0(JKpAQY4q6rGJ...|
+|1888401219|hTaTmur%WI@'cG_P(...|
+| 206368962|2!r0(JKpAQY4q6rGJ...|
+|1888401219|hTaTmur%WI@'cG_P(...|
+| 206368962|2!r0(JKpAQY4q6rGJ...|
+|1888401219|hTaTmur%WI@'cG_P(...|
+| 206368962|2!r0(JKpAQY4q6rGJ...|
+|1888401219|hTaTmur%WI@'cG_P(...|
+| 206368962|2!r0(JKpAQY4q6rGJ...|
+|1888401219|hTaTmur%WI@'cG_P(...|
+| 206368962|2!r0(JKpAQY4q6rGJ...|
+|1888401219|hTaTmur%WI@'cG_P(...|
++----------+--------------------+
+only showing top 20 rows
+```
