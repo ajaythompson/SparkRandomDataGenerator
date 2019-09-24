@@ -26,6 +26,7 @@ Create employee gen object as per the need using Generators provided by scalache
 ```
 import org.scalacheck.Gen._
 import org.apache.spark.sql.Row
+import org.scalacheck.Arbitrary.arbitrary
 val genEmployee = for{id <- arbitrary[Int] 
                     name <- asciiPrintableStr} yield Row(id, name)
 ```
@@ -34,7 +35,7 @@ Create a data-frame of test data by invoking the dataGenerator function which ta
 number of slices and 
 number of rows.`
 ```
-import org.thompson.StructTypeUtils._
+import org.thompson.core.StructTypeUtils._
 implicit val sparkSession  = spark
 val employeeDF = structType.dataGenerator(genEmployee, 2, 200)
 ```
