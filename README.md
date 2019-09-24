@@ -35,7 +35,7 @@ Create a data-frame of test data by invoking the dataGenerator function which ta
 number of slices and 
 number of rows.`
 ```
-import org.thompson.core.StructTypeUtils._
+import org.thompson.StructTypeUtils._
 implicit val sparkSession  = spark
 val employeeDF = structType.dataGenerator(genEmployee, 2, 200)
 ```
