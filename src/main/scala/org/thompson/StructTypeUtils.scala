@@ -19,9 +19,9 @@ object StructTypeUtils {
     def dataGenerator(rowGen: Gen[Row], numSlice: Int, numRowPerSlice: Int)
                      (implicit spark: SparkSession): DataFrame = {
       val sc = spark.sparkContext
-      lazy val rowSeq: Gen[List[Row]] = Gen.listOfN(numRowPerSlice, rowGen)
-      val genRDD: RDD[Seq[Row]] = sc.parallelize(List.fill(numSlice)(rowSeq.sample.get), numSlice)
-      val rowRdd: RDD[Row] = genRDD.flatMap(x => x)
+      val genRDD = sc.parallelize(List.fill(numSlice)(rowGen), numSlice)
+      lazy val rowRdd: RDD[Row] = genRDD.flatMap(x =>
+        Gen.listOfN(numRowPerSlice, x).sample.get)
       spark.createDataFrame(rowRdd, structType)
     }
   }
